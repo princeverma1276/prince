@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Verma | Unique Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            padding: 50px;
+            position: relative;
+        }
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 40px #00ffff; }
+        }
+        .info {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .glowing-object {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ff00ff, transparent);
+            border-radius: 50%;
+            animation: move 10s infinite linear;
+        }
+        @keyframes move {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(80vw, 20vh); }
+            50% { transform: translate(40vw, 60vh); }
+            75% { transform: translate(20vw, 30vh); }
+            100% { transform: translate(0, 0); }
+        }
+        .chess-board {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%),
+                        linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            border: 2px solid white;
+            box-shadow: 0 0 15px #ffff00;
+            animation: moveChess 12s infinite alternate;
+        }
+        @keyframes moveChess {
+            0% { transform: translate(10vw, 10vh) rotate(0deg); }
+            50% { transform: translate(70vw, 50vh) rotate(180deg); }
+            100% { transform: translate(30vw, 80vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prince Verma</h1>
+        <div class="info">
+            <h2>About Me & Chess</h2>
+            <p>I am Prince Verma, a passionate chess enthusiast who loves the strategic depth and beauty of the game. Chess is not just a game for me, but a way to sharpen my mind, enhance creativity, and develop patience. Every move on the board is a step toward mastery, and I embrace every challenge that comes with it.</p>
+        </div>
+        <div class="info">
+            <h2>Technology Trends in 2025</h2>
+            <p>The world is advancing rapidly with AI, Blockchain, and Web 3.0 shaping the future. The rise of Quantum Computing and AR/VR is making the digital experience more immersive than ever!</p>
+        </div>
+    </div>
+    <script>
+        function createGlowingObjects(num) {
+            for (let i = 0; i < num; i++) {
+                let obj = document.createElement("div");
+                obj.classList.add("glowing-object");
+                obj.style.top = Math.random() * 100 + "vh";
+                obj.style.left = Math.random() * 100 + "vw";
+                obj.style.animationDuration = (Math.random() * 5 + 5) + "s";
+                document.body.appendChild(obj);
+            }
+        }
+        
+        function createChessBoards(num) {
+            for (let i = 0; i < num; i++) {
+                let board = document.createElement("div");
+                board.classList.add("chess-board");
+                board.style.top = Math.random() * 80 + "vh";
+                board.style.left = Math.random() * 80 + "vw";
+                document.body.appendChild(board);
+            }
+        }
+        
+        createGlowingObjects(10);
+        createChessBoards(5);
+    </script>
+</body>
+</html>
